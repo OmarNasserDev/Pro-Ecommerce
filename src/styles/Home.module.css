@@ -1,0 +1,9 @@
+.category {
+    font-size: 25px;
+    font-weight: bolder;
+    margin-bottom: 5px;
+    background: linear-gradient(to left, #000000, #707070);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}

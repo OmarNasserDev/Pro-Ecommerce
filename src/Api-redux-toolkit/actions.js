@@ -1,0 +1,23 @@
+import { createAsyncThunk, isRejectedWithValue } from '@reduxjs/toolkit'
+import axios from 'axios'
+
+export const getAllCategories = createAsyncThunk('category/getAllCategories', async (_, { rejecteWithValue }) => {
+    try {
+
+        const response = await axios.get('https://fakestoreapi.com/products/categories')
+        return response.data
+    } catch (error) {
+        return rejecteWithValue(error)
+    }
+})
+
+export const getAllProducts = createAsyncThunk('products/getAllProducts', async (_, { rejectedWithValue }) => {
+    try {
+
+        const response = await axios.get('https://fakestoreapi.com/products')
+        return response.data
+
+    } catch (error) {
+        return rejectedWithValue(error)
+    }
+})

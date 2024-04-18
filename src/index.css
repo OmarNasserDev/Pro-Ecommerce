@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+    .no-scrollbar {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+
+    .smoot-duration {
+        animation-timing-function: ease-in-out;
+    }
+}
+
+html {
+    scrollbar-width: none;
+    transition: all;
+    transition-duration: 1s linear;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: "Playfair Display", serif;
+    font-size: 15px;
+    font-weight: 600;
+
+
+}

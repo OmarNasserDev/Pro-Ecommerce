@@ -21,3 +21,14 @@ export const getAllProducts = createAsyncThunk('products/getAllProducts', async 
         return rejectedWithValue(error)
     }
 })
+
+export const getAllOurProducts = createAsyncThunk('products/getAllOurProducts', async (_, { rejectedWithValue }) => {
+    try {
+        const response = await axios.get('http://makeup-api.herokuapp.com/api/v1/products.json?brand=maybelline')
+
+        return response.data
+    } catch (error) {
+        return rejectedWithValue(error)
+    }
+
+})

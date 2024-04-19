@@ -16,7 +16,7 @@ const CategoryCard = (props) => {
     }
 
     return (
-        <div className='relative w-full min-h-full mb-10'>
+        <div className='relative w-full min-h-full lg:mb-10'>
             <div className='absolute top-[-5rem] right-20 hidden lg:flex gap-5 '>
                 <div className='w-10 h-10 bg-gray-200 flex items-center justify-center rounded-full p-7 cursor-pointer'><ArrowBackIcon className='scale-125 ' onClick={handlePrev} /></div>
                 <div className='w-10 h-10 bg-gray-200 flex items-center justify-center rounded-full p-7 cursor-pointer'><ArrowForwardIcon className='scale-125 ' onClick={handleNext} /></div>

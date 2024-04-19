@@ -40,7 +40,7 @@ const Header = () => {
     }
 
     return (
-        <div className='shadow-lg shadow-gray-300'>
+        <div className='shadow-lg bg-white shadow-gray-300 sticky top-0 z-50'>
             <Box className='w-full h-12 grid grid-cols-12 bg-black text-gray-100 content-center' sx={{ display: { xs: 'none', md: 'grid' } }}>
                 <p className='col-span-10 text-center text-lg'>Summer Sale For All Swim Suits Free Express Delivery - OFF 50%! <a href="#" className='text-white underline font-extrabold text-xl'> ShopNow</a></p>
                 <Box sx={{ minWidth: 120, display: "flex", alignItems: "center" }}>

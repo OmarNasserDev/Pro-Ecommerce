@@ -35,7 +35,7 @@ const ProductsSlider = (props) => {
                 {
                     products.map(product =>
 
-                        <Card sx={{ minWidth: { xs: 200, lg: 345 }, height: { xs: 300, lg: 450 }, boxShadow: 'none' }}>
+                        <Card sx={{ minWidth: { xs: 200, lg: 345 }, height: { xs: 300, lg: 450 }, boxShadow: 'none' }} key={product.title}>
                             <CardActionArea>
 
                                 <div className='relative w-full h-44 lg:h-80 flex items-center bg-gray-100'>
@@ -53,7 +53,7 @@ const ProductsSlider = (props) => {
                                 </div>
 
                                 <CardContent>
-                                    <Typography gutterBottom variant="h6" component="div" className='line-clamp-2 h-5' sx={{ fontWeight: 'bold', lineHeight: 1.5, marginBottom: 2 }}>
+                                    <Typography gutterBottom variant="h6" component="div" className='line-clamp-2 h-5' sx={{ fontWeight: 'bold', lineHeight: 1, marginBottom: 2 }}>
                                         {product.title}
                                     </Typography>
                                     <Typography color='red' sx={{ fontWeight: 'bold', fontFamily: 'sans-serif', marginBottom: 2 }} >

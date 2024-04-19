@@ -29,7 +29,7 @@ const BestSelling = ({ products }) => {
                 {
                     bestProducts.map(product =>
 
-                        <Card sx={{ minWidth: { xs: 200, lg: 345 }, height: { xs: 300, lg: 450 }, boxShadow: 'none' }} className='col-span-5 lg:m-0 lg:col-span-3'>
+                        <Card sx={{ minWidth: { xs: 200, lg: 345 }, height: { xs: 300, lg: 450 }, boxShadow: 'none' }} className='col-span-5 lg:m-0 lg:col-span-3' key={product.title}>
                             <CardActionArea>
                                 <div className='relative w-full h-44 lg:h-80 flex items-center bg-gray-100'>
 
@@ -43,7 +43,7 @@ const BestSelling = ({ products }) => {
                                 </div>
 
                                 <CardContent>
-                                    <Typography gutterBottom variant="h6" component="div" className='line-clamp-2 h-5' sx={{ fontWeight: 'bold', lineHeight: 1.5, marginBottom: 2 }}>
+                                    <Typography gutterBottom variant="h6" component="div" className='line-clamp-2 h-5' sx={{ fontWeight: 'bold', lineHeight: 1, marginBottom: 2 }}>
                                         {product.title}
                                     </Typography>
                                     <Typography color='red' sx={{ fontWeight: 'bold', fontFamily: 'sans-serif', marginBottom: 2 }} >

@@ -7,7 +7,7 @@ import Countdown from 'react-countdown'
 import Box from '@mui/material/Box';
 import AirportShuttleOutlinedIcon from '@mui/icons-material/AirportShuttleOutlined';
 import HeadsetMicOutlinedIcon from '@mui/icons-material/HeadsetMicOutlined';
-import ShieldOutlinedIcon from '@mui/icons-material/ShieldOutlined';
+import VerifiedUserOutlinedIcon from '@mui/icons-material/VerifiedUserOutlined';
 import ArrowUpwardOutlinedIcon from '@mui/icons-material/ArrowUpwardOutlined';
 
 //Assets
@@ -228,7 +228,7 @@ const Home = () => {
                     <div className='w-28 lg:w-96 flex flex-col items-center'>
                         <div className='w-16 h-16 lg:w-24 lg:h-24 rounded-full  mb-5 flex items-center justify-center text-white bg-gray-400'>
                             <div className='w-10 h-10 lg:w-16 lg:h-16 flex items-center justify-center rounded-full  bg-black'>
-                                <ShieldOutlinedIcon className='lg:scale-[150%]' />
+                                <VerifiedUserOutlinedIcon className='lg:scale-[150%]' />
                             </div>
                         </div>
                         <div className='text-center'>
@@ -241,7 +241,7 @@ const Home = () => {
                     <button onClick={() => { window.scrollTo({ top: 0, behavior: 'smooth' }) }}><ArrowUpwardOutlinedIcon /></button>
                 </div>
             </section>
-            <Footer />
+
         </div >
     )
 }

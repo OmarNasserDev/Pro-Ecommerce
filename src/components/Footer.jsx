@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { memo } from 'react'
 //MUI
 import SendOutlinedIcon from '@mui/icons-material/SendOutlined';
 import FacebookSharpIcon from '@mui/icons-material/FacebookSharp';
@@ -34,7 +34,7 @@ const Footer = () => {
                     <h1>Account</h1>
                     <ul>
                         <li className=' mb-1'><a href="#" className='text-md lg:text-xl font-thin'>My Account</a></li>
-                        <li className=' mb-1'><a href="#" className='text-md lg:text-xl font-thin'>Login / Register</a></li>
+                        <li className=' mb-1 text-md lg:text-xl font-thin'><a href="/login" className='text-md lg:text-xl font-thin'>Login </a> / <a href="/register" className='text-md lg:text-xl font-thin'> Register</a></li>
                         <li className=' mb-1'><a href="#" className='text-md lg:text-xl font-thin'>Cart</a></li>
                         <li className=' mb-1'><a href="#" className='text-md lg:text-xl font-thin'>Wishlist</a></li>
                         <li className=' mb-1'><a href="#" className='text-md lg:text-xl font-thin'>Shop</a></li>
@@ -72,4 +72,4 @@ const Footer = () => {
     )
 }
 
-export default Footer
+export default memo(Footer)

@@ -13,12 +13,17 @@ import EmailIcon from '@mui/icons-material/Email';
 import ImportContactsIcon from '@mui/icons-material/ImportContacts';
 import ExitToAppIcon from '@mui/icons-material/ExitToApp';
 import CloseIcon from '@mui/icons-material/Close';
+import PersonOutlineOutlinedIcon from '@mui/icons-material/PersonOutlineOutlined';
+import CancelOutlinedIcon from '@mui/icons-material/CancelOutlined';
+import StarBorderOutlinedIcon from '@mui/icons-material/StarBorderOutlined';
+import LogoutOutlinedIcon from '@mui/icons-material/LogoutOutlined';
 import { IconButton, Menu, MenuItem, Typography, FormControl, NativeSelect, Button } from '@mui/material';
 
 const Header = () => {
 
     const [lang, setLang] = useState('Languagee')
-    const navItems = ['Home', 'Contact', 'About', 'Sign Up']
+    const navItems = [{ type: 'Home', ref: '/' }, { type: 'Contact', ref: '/contact' }, { type: 'About', ref: '/about' }, { type: 'Sign Up', ref: '/register' }]
+
 
     const handlechange = (data) => {
         setLang(data.target.value)
@@ -61,7 +66,7 @@ const Header = () => {
                     <div className='flex gap-5'>
                         {
                             navItems.map(item =>
-                                <a href="#" key={item}>  <Typography variant='h5' className='hover:underline'>{item}</Typography></a>)
+                                <a href={item.ref} key={item.type}>  <Typography variant='h5' className='hover:underline'>{item.type}</Typography></a>)
                         }
                     </div>
                     <div className='flex items-center justify-between gap-5'>
@@ -71,6 +76,16 @@ const Header = () => {
                         </div>
                         <FavoriteBorderIcon sx={{ fontSize: "2rem" }} />
                         <ShoppingCartIcon sx={{ fontSize: "2rem" }} />
+                        <div className='relative w-10 h-10 bg-[#DB4444] rounded-full text-center text-white border-none outline-none'>
+                            <button> <PersonOutlineOutlinedIcon sx={{ fontSize: "2rem" }} onClick={() => { document.querySelector('#controller').classList.toggle('grid') }} /></button>
+                            <div className='z-50 w-64 hidden grid-rows-5 absolute top-10 right-10  px-5 py-2 min-h-20 bg-gray-950/30 backdrop-blur-xl text-2xl rounded-md ' id='controller'>
+                                <a href="#" className='font-black flex justify-start items-center gap-2 mb-5'><PersonOutlineOutlinedIcon sx={{ fontSize: "2rem" }} /> Manage My Account</a>
+                                <a href="#" className='font-black flex justify-start items-center gap-2 mb-5'><ShoppingCartIcon /> My Order</a>
+                                <a href="#" className='font-black flex justify-start items-center gap-2 mb-5'><CancelOutlinedIcon /> My Cancellations</a>
+                                <a href="#" className='font-black flex justify-start items-center gap-2 mb-5'><StarBorderOutlinedIcon /> My Reviews</a>
+                                <a href="#" className='font-black flex justify-start items-center gap-2'><LogoutOutlinedIcon /> Logout</a>
+                            </div>
+                        </div>
                     </div>
                 </Box>
 
@@ -95,10 +110,10 @@ const Header = () => {
                     onClose={handleClose}
 
                 >
-                    <MenuItem onClick={handleClose} sx={{ gap: '10px' }}><EmailIcon /> Contact</MenuItem>
-                    <MenuItem onClick={handleClose} sx={{ gap: '10px' }}><HomeIcon /> Home</MenuItem>
-                    <MenuItem onClick={handleClose} sx={{ gap: '10px' }}><ImportContactsIcon /> About</MenuItem>
-                    <MenuItem onClick={handleClose} sx={{ gap: '10px' }}><ExitToAppIcon /> Sign UP</MenuItem>
+                    <a href="/contact"><MenuItem onClick={handleClose} sx={{ gap: '10px' }}><EmailIcon /> Contact</MenuItem></a>
+                    <a href="/"><MenuItem onClick={handleClose} sx={{ gap: '10px' }}><HomeIcon /> Home</MenuItem></a>
+                    <a href="/about"><MenuItem onClick={handleClose} sx={{ gap: '10px' }}><ImportContactsIcon /> About</MenuItem></a>
+                    <a href="/register"><MenuItem onClick={handleClose} sx={{ gap: '10px' }}><ExitToAppIcon /> Sign UP</MenuItem></a>
                     <MenuItem onClick={handlePopUp} sx={{ gap: '10px' }}> <SearchIcon className='w-10 h-10' sx={{ fontSize: "2rem" }} />Search</MenuItem>
                 </Menu>
             </Box>

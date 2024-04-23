@@ -1,4 +1,4 @@
-import React, { useState, memo } from 'react'
+import React, { useState, useContext, memo } from 'react'
 
 //MUI 
 
@@ -18,9 +18,10 @@ import CancelOutlinedIcon from '@mui/icons-material/CancelOutlined';
 import StarBorderOutlinedIcon from '@mui/icons-material/StarBorderOutlined';
 import LogoutOutlinedIcon from '@mui/icons-material/LogoutOutlined';
 import { IconButton, Menu, MenuItem, Typography, FormControl, NativeSelect, Button } from '@mui/material';
-
+//Context WishList
+import { WishList } from '../App'
 const Header = () => {
-
+    const { wisharray, setWisharray } = useContext(WishList)
     const [lang, setLang] = useState('Languagee')
     const navItems = [{ type: 'Home', ref: '/' }, { type: 'Contact', ref: '/contact' }, { type: 'About', ref: '/about' }, { type: 'Sign Up', ref: '/register' }]
 
@@ -74,7 +75,10 @@ const Header = () => {
                             <input type="text" placeholder="What are you looking for?" id='search' className='w-full h-full px-5 text-lg rounded-md bg-gray-100 outline-none' />
                             <SearchIcon className='absolute top-2 right-3 w-10 h-10' sx={{ fontSize: "2rem" }} />
                         </div>
-                        <FavoriteBorderIcon sx={{ fontSize: "2rem" }} />
+                        <div className='relative w-10 h-12 flex items-center justify-center'>
+                            <h1 className='absolute top-1 right-0 w-6 h-6 rounded-full text-lg bg-[#DB4444] text-white pb-2 flex place-items-center justify-center'>{wisharray.length}</h1>
+                            <a href="/wishlist"> <FavoriteBorderIcon sx={{ fontSize: "2rem" }} /></a>
+                        </div>
                         <ShoppingCartIcon sx={{ fontSize: "2rem" }} />
                         <div className='relative w-10 h-10 bg-[#DB4444] rounded-full text-center text-white border-none outline-none'>
                             <button> <PersonOutlineOutlinedIcon sx={{ fontSize: "2rem" }} onClick={() => { document.querySelector('#controller').classList.toggle('grid') }} /></button>

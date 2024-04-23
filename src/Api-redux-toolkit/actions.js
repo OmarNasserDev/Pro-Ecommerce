@@ -32,3 +32,14 @@ export const getAllOurProducts = createAsyncThunk('products/getAllOurProducts', 
     }
 
 })
+
+
+export const getSingleProduct = createAsyncThunk('products/getSingleProduct', async (id, { rejectedWithValue }) => {
+    try {
+
+        const response = await axios.get(`https://fakestoreapi.com/products/${id}`)
+        return response.data
+    } catch (error) {
+        return rejectedWithValue(error)
+    }
+})

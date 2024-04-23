@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useContext, memo } from 'react'
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
@@ -9,7 +9,10 @@ import StarHalfIcon from '@mui/icons-material/StarHalf';
 import StarOutlineIcon from '@mui/icons-material/StarOutline';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
-
+import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
+import VisibilityIcon from '@mui/icons-material/Visibility';
+//Context WishList
+import { WishList } from '../App';
 
 const BestSelling = ({ products }) => {
 
@@ -18,10 +21,18 @@ const BestSelling = ({ products }) => {
         const filterdProducts = products.filter(product => product.rating.rate > 4.6)
         setBestProducts(filterdProducts)
     }
+    const { wisharray, setWisharray } = useContext(WishList)
+    const addToFavourit = (product) => {
+        const test = wisharray.filter(item => item.id === product.id)
+        if (!test.length > 0) {
+            setWisharray([...wisharray, product])
+        }
+    }
     const [bestProducts, setBestProducts] = useState([])
     useEffect(() => {
         filterData()
     }, [products])
+
 
     return (
         <div className='mb-20'>
@@ -29,7 +40,11 @@ const BestSelling = ({ products }) => {
                 {
                     bestProducts.map(product =>
 
-                        <Card sx={{ minWidth: { xs: 200, lg: 345 }, height: { xs: 300, lg: 450 }, boxShadow: 'none' }} className='col-span-5 lg:m-0 lg:col-span-3' key={product.title}>
+                        <Card sx={{ minWidth: { xs: 200, lg: 345 }, height: { xs: 300, lg: 450 }, boxShadow: 'none', position: 'relative' }} className='col-span-5 lg:m-0 lg:col-span-3' key={product.title}>
+                            <div className='absolute top-5 right-5 flex flex-col gap-4 z-30'>
+                                <div className='lg:w-10 lg:h-10 rounded-full bg-white flex items-center justify-center'><button onClick={() => { addToFavourit(product) }}> <FavoriteBorderIcon /></button></div>
+                                <div className='lg:w-10 lg:h-10 rounded-full bg-white flex items-center justify-center'><button><VisibilityIcon /></button> </div>
+                            </div>
                             <CardActionArea>
                                 <div className='relative w-full h-44 lg:h-80 flex items-center bg-gray-100'>
 
@@ -82,4 +97,4 @@ const BestSelling = ({ products }) => {
     )
 }
 
-export default BestSelling
+export default memo(BestSelling)

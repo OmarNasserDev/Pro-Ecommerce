@@ -19,9 +19,10 @@ import StarBorderOutlinedIcon from '@mui/icons-material/StarBorderOutlined';
 import LogoutOutlinedIcon from '@mui/icons-material/LogoutOutlined';
 import { IconButton, Menu, MenuItem, Typography, FormControl, NativeSelect, Button } from '@mui/material';
 //Context WishList
-import { WishList } from '../App'
+import { WishList, Cart } from '../App.jsx'
 const Header = () => {
-    const { wisharray, setWisharray } = useContext(WishList)
+    const { wisharray } = useContext(WishList)
+    const { cart } = useContext(Cart)
     const [lang, setLang] = useState('Languagee')
     const navItems = [{ type: 'Home', ref: '/' }, { type: 'Contact', ref: '/contact' }, { type: 'About', ref: '/about' }, { type: 'Sign Up', ref: '/register' }]
 
@@ -46,7 +47,7 @@ const Header = () => {
     }
 
     return (
-        <div className='shadow-lg bg-white shadow-gray-300 sticky top-0 z-50'>
+        <div className='w-full shadow-lg bg-white shadow-gray-300 sticky top-0 lg:fixed z-50'>
             <Box className='w-full h-12 grid grid-cols-12 bg-black text-gray-100 content-center' sx={{ display: { xs: 'none', md: 'grid' } }}>
                 <p className='col-span-10 text-center text-lg'>Summer Sale For All Swim Suits Free Express Delivery - OFF 50%! <a href="#" className='text-white underline font-extrabold text-xl'> ShopNow</a></p>
                 <Box sx={{ minWidth: 120, display: "flex", alignItems: "center" }}>
@@ -79,7 +80,11 @@ const Header = () => {
                             <h1 className='absolute top-1 right-0 w-6 h-6 rounded-full text-lg bg-[#DB4444] text-white pb-2 flex place-items-center justify-center'>{wisharray.length}</h1>
                             <a href="/wishlist"> <FavoriteBorderIcon sx={{ fontSize: "2rem" }} /></a>
                         </div>
-                        <ShoppingCartIcon sx={{ fontSize: "2rem" }} />
+                        <div className='relative w-10 h-12 flex items-center justify-center'>
+                            <h1 className='absolute top-1 right-0 w-6 h-6 rounded-full text-lg bg-[#DB4444] text-white pb-2 flex place-items-center justify-center'>{cart.length}</h1>
+                            <a href="/cart">  <ShoppingCartIcon sx={{ fontSize: "2rem" }} /></a>
+                        </div>
+
                         <div className='relative w-10 h-10 bg-[#DB4444] rounded-full text-center text-white border-none outline-none'>
                             <button> <PersonOutlineOutlinedIcon sx={{ fontSize: "2rem" }} onClick={() => { document.querySelector('#controller').classList.toggle('grid') }} /></button>
                             <div className='z-50 w-64 hidden grid-rows-5 absolute top-10 right-10  px-5 py-2 min-h-20 bg-gray-950/30 backdrop-blur-xl text-2xl rounded-md ' id='controller'>

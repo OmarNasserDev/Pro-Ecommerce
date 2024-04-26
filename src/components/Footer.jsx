@@ -7,9 +7,11 @@ import InstagramIcon from '@mui/icons-material/Instagram';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 //Assets 
 import appsparcode from '../assets/AppsParCode.png'
+//Component
+
 const Footer = () => {
     return (
-        <div className='w-full min-h-96 bg-black'>
+        <div className='w-full min-h-96  bg-black'>
             <div className='grid grid-cols-2 gap-16 lg:gap-0 lg:flex items-start justify-between p-5 lg:p-20 text-white flex-'>
                 <div className='flex flex-col gap-5 lg:gap-10 text-lg lg:text-3xl font-medium'>
                     <h1>Exculsive</h1>

@@ -12,13 +12,13 @@ import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import VisibilityIcon from '@mui/icons-material/Visibility';
+import ShoppingCartCheckoutOutlinedIcon from '@mui/icons-material/ShoppingCartCheckoutOutlined';
 //Context
-import { WishList } from '../App.jsx'
+import { WishList, Cart } from '../App.jsx'
 
 
 const ProductsSlider = (props) => {
 
-    const [favour, setFavour] = useState([])
     //Get Products As Props Form Home Page
     const products = props.products
     //Slide Cards
@@ -32,14 +32,20 @@ const ProductsSlider = (props) => {
     }
     //Add to favourit
     const { wisharray, setWisharray } = useContext(WishList)
-    const showAlert = false
     const addToFavourit = (product) => {
         const test = wisharray.filter(item => item.id === product.id)
         if (!test.length > 0) {
             setWisharray([...wisharray, product])
         }
     }
-
+    const { cart, setCart } = useContext(Cart)
+    const addToCart = (product) => {
+        const test = cart.filter(item => item.id === product.id)
+        if (!test.length > 0) {
+            setCart([...cart, product])
+        }
+    }
+    console.log(cart);
 
     return (
         <div className='min-w-full h-full relative'>
@@ -54,11 +60,12 @@ const ProductsSlider = (props) => {
                     products.map(product =>
 
                         <Card sx={{ minWidth: { xs: 200, lg: 345 }, height: { xs: 300, lg: 450 }, boxShadow: 'none', position: 'relative' }} key={product.title}>
+                            <div className='absolute top-5 right-5 flex flex-col gap-4 z-30'>
+                                <div className='lg:w-10 lg:h-10 rounded-full bg-white flex items-center justify-center z-50'><button onClick={() => addToFavourit(product)}> <FavoriteBorderIcon /></button></div>
+                                <div className='lg:w-10 lg:h-10 rounded-full bg-white flex items-center justify-center z-50'><button onClick={() => window.location.href = `/product/${product.id}`}><VisibilityIcon /></button> </div>
+                                <div className='lg:w-10 lg:h-10 rounded-full bg-white flex items-center justify-center z-50'><button onClick={() => { addToCart(product) }}><ShoppingCartCheckoutOutlinedIcon /></button> </div>
+                            </div>
                             <CardActionArea href={'/product/' + product.id}>
-                                <div className='absolute top-5 right-5 flex flex-col gap-4 z-30'>
-                                    <div className='lg:w-10 lg:h-10 rounded-full bg-white flex items-center justify-center'><button onClick={() => addToFavourit(product)}> <FavoriteBorderIcon /></button></div>
-                                    <div className='lg:w-10 lg:h-10 rounded-full bg-white flex items-center justify-center'><button><VisibilityIcon /></button> </div>
-                                </div>
                                 <div className='relative w-full h-44 lg:h-80 flex items-center bg-gray-100'>
                                     {product.rating.rate >= 3 ?
                                         <h1 className='absolute top-2 left-2 lg:top-5 lg:left-5 bg-[#DB4444]  w-14 h-7 lg:w-20 lg:h-8 lg:text-lg  text-white font-sans text-center rounded-md '>-45%</h1>

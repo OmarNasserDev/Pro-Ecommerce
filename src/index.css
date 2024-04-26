@@ -40,3 +40,23 @@ html {
 .grid {
     display: grid;
 }
+
+
+.swiper-pagination-bullet-active {
+    background: #DB4444;
+
+}
+
+.swiper-pagination-bullet {
+    width: 1rem;
+    height: 1rem;
+    border: 1px solid black;
+    padding: 5px;
+    background-clip: padding-box;
+
+}
+
+.swiper-pagination {
+    top: 0px;
+    height: min-content;
+}

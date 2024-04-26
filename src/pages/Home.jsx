@@ -23,6 +23,7 @@ import ProductsSlider from '../components/ProductsSlider';
 import CategoryCard from '../components/CategoryCard';
 import BestSelling from '../components/BestSelling';
 import OurProductsSlider from '../components/OurProductsSlider';
+import Header from '../components/Header';
 import Footer from '../components/Footer';
 
 const Home = () => {
@@ -71,8 +72,8 @@ const Home = () => {
 
     return (
         <div className='w-full min-h-full pr-0 lg:p-0 scroll-smooth'>
-
-            <section className='w-full min-h-96 grid grid-cols-12'>
+            <Header />
+            <section className='w-full min-h-96 grid grid-cols-12 mt-32'>
                 <Box className='w-96 h-full col-span-4 text-center border-r-4 border-slate-300 mx-auto py-10' sx={{ display: { xs: 'none', lg: 'grid' } }}>
                     {categoriesData.map((item) => (
                         <a className={style.category} key={item} href='#'>{item}</a>
@@ -142,7 +143,7 @@ const Home = () => {
                     <span className='w-6 h-12 rounded-md  bg-[#DB4444]'></span>
                     <h3 className='text-2xl font-semibold text-[#DB4444]'>Our Products</h3>
                 </div>
-                <div className='flex flex-col h-[125vh]'>
+                <div className='flex flex-col h-[120vh] overflow-hidden'>
                     <div className='flex text-2xl lg:text-5xl gap-20 lg:gap-32 mb-20 '>
                         <h1 className='font-sans capitalize'>Explore our products</h1>
                     </div>
@@ -241,7 +242,7 @@ const Home = () => {
                     <button onClick={() => { window.scrollTo({ top: 0, behavior: 'smooth' }) }}><ArrowUpwardOutlinedIcon /></button>
                 </div>
             </section>
-
+            <Footer />
         </div >
     )
 }

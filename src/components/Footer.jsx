@@ -48,7 +48,7 @@ const Footer = () => {
                         <li className=' mb-1'><a href="#" className='text-md lg:text-xl font-thin'>Privacy Policy</a></li>
                         <li className=' mb-1'><a href="#" className='text-md lg:text-xl font-thin'>Terms Of Use</a></li>
                         <li className=' mb-1'><a href="#" className='text-md lg:text-xl font-thin'>FAQ</a></li>
-                        <li className=' mb-1'><a href="#" className='text-md lg:text-xl font-thin'>Contact</a></li>
+                        <li className=' mb-1'><a href="/contact" className='text-md lg:text-xl font-thin'>Contact</a></li>
                     </ul>
                 </div>
                 <div className='flex flex-col gap-5 text-lg lg:text-3xl font-medium'>

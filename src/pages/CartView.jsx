@@ -18,7 +18,7 @@ const CartView = () => {
     };
     let total = 0
     cart.map(product => total += parseInt(product.price))
-    console.log(total)
+
     useEffect(() => {
         // Initialize counts state with default quantity from inputs
         const defaultCounts = quantitiesRef.current.map(input => input ? parseInt(input.value) || 1 : 1);
@@ -90,7 +90,7 @@ const CartView = () => {
                                     <h4 className='font-mono'>${total}</h4>
                                 </div>
                             </div>
-                            <button className='w-72 h-14 rounded-md text-white font-serif mx-auto bg-[#DB4444]'>Procees to checkout</button>
+                            <button className='w-72 h-14 rounded-md text-white font-serif mx-auto bg-[#DB4444]' onClick={() => { window.location.href = '/checkout' }}>Procees to checkout</button>
                         </div>
                     </div>
                 </div>

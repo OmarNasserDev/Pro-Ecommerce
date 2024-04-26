@@ -10,11 +10,11 @@ const Register = () => {
     return (
         <div className='w-full h-[100vh]  '>
             <Header />
-            <div className='my-48 grid grid-rows-4 ml-20 lg:flex items-center justify-between gap-28'>
-                <div className='hidden lg:flex w-80 lg:w-full row-span-1 mt-48 lg:mt-0 p-10 lg:p-0 '>
+            <div className='px-5 lg:px-0 my-48 grid grid-rows-2 lg:ml-20 lg:flex items-center justify-between lg:gap-28'>
+                <div className='lg:flex lg:w-full row-span-1  p-10 lg:p-0 '>
                     <img src={loginImage} alt="Login Side Image" />
                 </div>
-                <div className='w-full h-full mt-48 lg:mt-0 flex flex-col items-start justify-center gap-10 row-span-3'>
+                <div className='w-full h-full flex flex-col items-start justify-center gap-10 row-span-3'>
                     <div>
                         <h1 className='text-xl lg:text-5xl font-serif mb-5'>Create an account</h1>
                         <h6 className='text-mdlg:text-xl font-serif'>Enter your details below</h6>

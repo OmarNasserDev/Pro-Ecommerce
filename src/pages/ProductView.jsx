@@ -101,7 +101,7 @@ const ProductView = () => {
                                         <span></span>
                                     )
                                     :
-                                    <h1>Not Avilable Colours</h1>
+                                    <h1>No Colours Avilable </h1>
                             }
                         </div>
                         <div className='flex flex-col lg:flex-row items-center gap-5 my-5'>

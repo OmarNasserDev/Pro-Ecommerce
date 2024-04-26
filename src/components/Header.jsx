@@ -17,6 +17,8 @@ import PersonOutlineOutlinedIcon from '@mui/icons-material/PersonOutlineOutlined
 import CancelOutlinedIcon from '@mui/icons-material/CancelOutlined';
 import StarBorderOutlinedIcon from '@mui/icons-material/StarBorderOutlined';
 import LogoutOutlinedIcon from '@mui/icons-material/LogoutOutlined';
+import CallOutlinedIcon from '@mui/icons-material/CallOutlined';
+
 import { IconButton, Menu, MenuItem, Typography, FormControl, NativeSelect, Button } from '@mui/material';
 //Context WishList
 import { WishList, Cart } from '../App.jsx'
@@ -47,7 +49,7 @@ const Header = () => {
     }
 
     return (
-        <div className='w-full shadow-lg bg-white shadow-gray-300 sticky top-0 lg:fixed z-50'>
+        <div className='w-full shadow-lg bg-white shadow-gray-300 fixed top-0 z-50'>
             <Box className='w-full h-12 grid grid-cols-12 bg-black text-gray-100 content-center' sx={{ display: { xs: 'none', md: 'grid' } }}>
                 <p className='col-span-10 text-center text-lg'>Summer Sale For All Swim Suits Free Express Delivery - OFF 50%! <a href="#" className='text-white underline font-extrabold text-xl'> ShopNow</a></p>
                 <Box sx={{ minWidth: 120, display: "flex", alignItems: "center" }}>
@@ -63,7 +65,7 @@ const Header = () => {
 
 
             <Box className='w-full flex items-center justify-between px-20 border-b-4 sm:h-16 md:h-20'>
-                <Typography variant='h5' sx={{ fontWeight: "bold", fontSize: { xs: '20px', md: '23px' } }}>Exculsive</Typography>
+                <Typography variant='h5' sx={{ fontWeight: "bold", fontSize: { xs: '20px', md: '23px' } }} onClick={() => { window.location.href = '/' }} className='hover:cursor-pointer'>Exculsive</Typography>
                 <Box className="flex items-center gap-80" sx={{ display: { xs: 'none', lg: 'flex' }, gap: { lg: '2rem', xl: '20rem' } }}>
                     <div className='flex gap-5'>
                         {
@@ -123,9 +125,28 @@ const Header = () => {
                     <a href="/"><MenuItem onClick={handleClose} sx={{ gap: '10px' }}><HomeIcon /> Home</MenuItem></a>
                     <a href="/about"><MenuItem onClick={handleClose} sx={{ gap: '10px' }}><ImportContactsIcon /> About</MenuItem></a>
                     <a href="/register"><MenuItem onClick={handleClose} sx={{ gap: '10px' }}><ExitToAppIcon /> Sign UP</MenuItem></a>
+                    <a href="/cart">
+                        <MenuItem onClick={handleClose} sx={{ gap: '10px' }}>
+                            <div className='relative w-10 h-12 flex items-center justify-center'>
+                                <h1 className='absolute top-1 right-0 w-6 h-6 rounded-full text-lg bg-[#DB4444] text-white pb-2 flex place-items-center justify-center'>{cart.length}</h1>
+                                <a href="/cart">  <ShoppingCartIcon sx={{ fontSize: "2rem" }} /></a>
+                            </div>
+                            Favourit
+                        </MenuItem>
+                    </a>
+                    <a href="/wishlist">
+                        <MenuItem onClick={handleClose} sx={{ gap: '10px' }}>
+                            <div className='relative w-10 h-12 flex items-center justify-center'>
+                                <h1 className='absolute top-1 right-0 w-6 h-6 rounded-full text-lg bg-[#DB4444] text-white pb-2 flex place-items-center justify-center'>{wisharray.length}</h1>
+                                <a href="/wishlist"> <FavoriteBorderIcon sx={{ fontSize: "2rem" }} /></a>
+                            </div>
+                            Cart
+                        </MenuItem>
+                    </a>
+                    <a href="/contact">  <MenuItem onClick={handleClose} sx={{ gap: '10px' }}><CallOutlinedIcon sx={{ fontSize: "2rem" }} /> Contact </MenuItem></a>
                     <MenuItem onClick={handlePopUp} sx={{ gap: '10px' }}> <SearchIcon className='w-10 h-10' sx={{ fontSize: "2rem" }} />Search</MenuItem>
                 </Menu>
-            </Box>
+            </Box >
             <Box className="w-full h-72 top-[-300px] absolute bg-gray-900 opacity-50 flex items-center justify-center text-white z-20" sx={{ display: popup, top: '0px' }}>
                 <Button className='absolute bottom-28 left-[28rem]' sx={{ color: "white" }} onClick={() => { setPopUp('none') }}>
                     <CloseIcon />

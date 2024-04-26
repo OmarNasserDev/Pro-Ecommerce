@@ -10,6 +10,8 @@ import ProductView from './pages/ProductView.jsx'
 import CartView from './pages/CartView.jsx'
 import Page404 from './pages/Page404.jsx'
 import About from './pages/About.jsx'
+import Contact from './pages/Contact.jsx'
+import Checkout from './pages/Checkout.jsx'
 //Auth pages
 import Login from './pages/Login.jsx'
 import Register from './pages/Register.jsx'
@@ -40,6 +42,8 @@ function App() {
               <Route path='/wishlist' element={<Wishlist />} />
               <Route path='/cart' element={<CartView />} />
               <Route path='/about' element={<About />} />
+              <Route path='/contact' element={<Contact />} />
+              <Route path='/checkout' element={<Checkout />} />
               <Route path='/product/:id' element={<ProductView />} />
               <Route path='/login' element={<Login />} />
               <Route path='/register' element={<Register />} />

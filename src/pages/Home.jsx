@@ -91,7 +91,7 @@ const Home = () => {
                 <div className='flex flex-col'>
                     <div className='flex text-2xl lg:text-5xl gap-20 lg:gap-32 mb-20 '>
                         <h1 className='font-sans'>Flash Sales</h1>
-                        <Countdown date={new Date('2024-4-25')} renderer={date} />
+                        <Countdown date={new Date('2024-5-25')} renderer={date} />
                     </div>
                     <ProductsSlider products={productsData} />
                 </div>

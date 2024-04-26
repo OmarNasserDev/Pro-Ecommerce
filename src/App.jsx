@@ -38,15 +38,15 @@ function App() {
           <BrowserRouter>
             <Routes>
               <Route path='*' element={<Page404 />} />
-              <Route path='/' element={<Home />} />
-              <Route path='/wishlist' element={<Wishlist />} />
-              <Route path='/cart' element={<CartView />} />
-              <Route path='/about' element={<About />} />
-              <Route path='/contact' element={<Contact />} />
-              <Route path='/checkout' element={<Checkout />} />
-              <Route path='/product/:id' element={<ProductView />} />
-              <Route path='/login' element={<Login />} />
-              <Route path='/register' element={<Register />} />
+              <Route path='/Pro-Ecommerce' element={<Home />} />
+              <Route path='/Pro-Ecommerce/wishlist' element={<Wishlist />} />
+              <Route path='/Pro-Ecommerce/cart' element={<CartView />} />
+              <Route path='/Pro-Ecommerce/about' element={<About />} />
+              <Route path='/Pro-Ecommerce/contact' element={<Contact />} />
+              <Route path='/Pro-Ecommerce/checkout' element={<Checkout />} />
+              <Route path='/Pro-Ecommerce/product/:id' element={<ProductView />} />
+              <Route path='/Pro-Ecommerce/login' element={<Login />} />
+              <Route path='/Pro-Ecommerce/register' element={<Register />} />
             </Routes>
           </BrowserRouter>
 

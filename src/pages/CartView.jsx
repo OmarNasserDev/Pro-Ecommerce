@@ -65,7 +65,7 @@ const CartView = () => {
                             </tbody>
                         </table>
                         <div className='w-full h-16 mt-10 flex items-center justify-between gap-5'>
-                            <a href="/" className='w-64 h-full border-2 border-gray-500 rounded-lg text-center content-center text-xl font-sans'>Return To Shop</a>
+                            <a href="/Pro-Ecommerce" className='w-64 h-full border-2 border-gray-500 rounded-lg text-center content-center text-xl font-sans'>Return To Shop</a>
                             <button className='w-64 h-full border-2 border-gray-500 rounded-lg text-center content-center text-xl font-sans'>Update Cart</button>
                         </div>
                     </div>
@@ -90,7 +90,7 @@ const CartView = () => {
                                     <h4 className='font-mono'>${total}</h4>
                                 </div>
                             </div>
-                            <button className='w-72 h-14 rounded-md text-white font-serif mx-auto bg-[#DB4444]' onClick={() => { window.location.href = '/checkout' }}>Procees to checkout</button>
+                            <button className='w-72 h-14 rounded-md text-white font-serif mx-auto bg-[#DB4444]' onClick={() => { window.location.href = '/Pro-Ecommerce/checkout' }}>Procees to checkout</button>
                         </div>
                     </div>
                 </div>

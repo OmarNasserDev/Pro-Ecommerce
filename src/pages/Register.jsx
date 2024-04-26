@@ -26,7 +26,7 @@ const Register = () => {
                         <div className='flex flex-col items-center justify-between gap-5'>
                             <button className='w-full h-16 bg-[#DB4444] rounded-md text-white text-xl font-thin'>Log in</button>
                             <button className='w-full h-16 bg-transparent rounded-md text-xl font-sans flex items-center justify-center px-5 lg:p-0  gap-5 border-2 border-black'><FcGoogle size={40} /> Sign up with Google</button>
-                            <h1 className='font-thin text-xl'>Already have account? <a href="/login" className='underline text-lg'>Log in</a></h1>
+                            <h1 className='font-thin text-xl'>Already have account? <a href="/Pro-Ecommerce/login" className='underline text-lg'>Log in</a></h1>
                         </div>
                     </form>
                 </div>

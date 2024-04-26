@@ -11,7 +11,7 @@ import appsparcode from '../assets/AppsParCode.png'
 
 const Footer = () => {
     return (
-        <div className='w-full min-h-96  bg-black'>
+        <div className='w-full min-h-96 bg-black'>
             <div className='grid grid-cols-2 gap-16 lg:gap-0 lg:flex items-start justify-between p-5 lg:p-20 text-white flex-'>
                 <div className='flex flex-col gap-5 lg:gap-10 text-lg lg:text-3xl font-medium'>
                     <h1>Exculsive</h1>
@@ -36,9 +36,9 @@ const Footer = () => {
                     <h1>Account</h1>
                     <ul>
                         <li className=' mb-1'><a href="#" className='text-md lg:text-xl font-thin'>My Account</a></li>
-                        <li className=' mb-1 text-md lg:text-xl font-thin'><a href="/login" className='text-md lg:text-xl font-thin'>Login </a> / <a href="/register" className='text-md lg:text-xl font-thin'> Register</a></li>
-                        <li className=' mb-1'><a href="#" className='text-md lg:text-xl font-thin'>Cart</a></li>
-                        <li className=' mb-1'><a href="#" className='text-md lg:text-xl font-thin'>Wishlist</a></li>
+                        <li className=' mb-1 text-md lg:text-xl font-thin'><a href="/Pro-Ecommerce/login" className='text-md lg:text-xl font-thin'>Login </a> / <a href="/Pro-Ecommerce/register" className='text-md lg:text-xl font-thin'> Register</a></li>
+                        <li className=' mb-1'><a href="/Pro-Ecommerce/cart" className='text-md lg:text-xl font-thin'>Cart</a></li>
+                        <li className=' mb-1'><a href="/Pro-Ecommerce/wishlist" className='text-md lg:text-xl font-thin'>Wishlist</a></li>
                         <li className=' mb-1'><a href="#" className='text-md lg:text-xl font-thin'>Shop</a></li>
                     </ul>
                 </div>
@@ -48,7 +48,7 @@ const Footer = () => {
                         <li className=' mb-1'><a href="#" className='text-md lg:text-xl font-thin'>Privacy Policy</a></li>
                         <li className=' mb-1'><a href="#" className='text-md lg:text-xl font-thin'>Terms Of Use</a></li>
                         <li className=' mb-1'><a href="#" className='text-md lg:text-xl font-thin'>FAQ</a></li>
-                        <li className=' mb-1'><a href="/contact" className='text-md lg:text-xl font-thin'>Contact</a></li>
+                        <li className=' mb-1'><a href="/Pro-Ecommerce/contact" className='text-md lg:text-xl font-thin'>Contact</a></li>
                     </ul>
                 </div>
                 <div className='flex flex-col gap-5 text-lg lg:text-3xl font-medium'>

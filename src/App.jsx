@@ -35,7 +35,7 @@ function App() {
     <>
       <WishList.Provider value={{ wisharray, setWisharray }}>
         <Cart.Provider value={{ cart, setCart }}>
-          <BrowserRouter>
+          <BrowserRouter basename='/Pro-Ecommerce'>
             <Routes>
               <Route path='*' element={<Page404 />} />
               <Route path='/Pro-Ecommerce' element={<Home />} />

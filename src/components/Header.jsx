@@ -26,7 +26,7 @@ const Header = () => {
     const { wisharray } = useContext(WishList)
     const { cart } = useContext(Cart)
     const [lang, setLang] = useState('Languagee')
-    const navItems = [{ type: 'Home', ref: '' }, { type: 'Contact', ref: '/contact' }, { type: 'About', ref: '/about' }, { type: 'Sign Up', ref: '/register' }]
+    const navItems = [{ type: 'Home', ref: '/' }, { type: 'Contact', ref: '/contact' }, { type: 'About', ref: '/about' }, { type: 'Sign Up', ref: '/register' }]
 
 
     const handlechange = (data) => {

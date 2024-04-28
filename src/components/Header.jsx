@@ -26,7 +26,7 @@ const Header = () => {
     const { wisharray } = useContext(WishList)
     const { cart } = useContext(Cart)
     const [lang, setLang] = useState('Languagee')
-    const navItems = [{ type: 'Home', ref: '/Pro-Ecommerce' }, { type: 'Contact', ref: '/Pro-Ecommerce/contact' }, { type: 'About', ref: '/Pro-Ecommerce/about' }, { type: 'Sign Up', ref: '/Pro-Ecommerce/register' }]
+    const navItems = [{ type: 'Home', ref: '' }, { type: 'Contact', ref: '/contact' }, { type: 'About', ref: '/about' }, { type: 'Sign Up', ref: '/register' }]
 
 
     const handlechange = (data) => {
@@ -65,7 +65,7 @@ const Header = () => {
 
 
             <Box className='w-full flex items-center justify-between px-20 border-b-4 sm:h-16 md:h-20'>
-                <Typography variant='h5' sx={{ fontWeight: "bold", fontSize: { xs: '20px', md: '23px' } }} onClick={() => { window.location.href = '/Pro-Ecommerce' }} className='hover:cursor-pointer'>Exculsive</Typography>
+                <Typography variant='h5' sx={{ fontWeight: "bold", fontSize: { xs: '20px', md: '23px' } }} onClick={() => { window.location.href = '/' }} className='hover:cursor-pointer'>Exculsive</Typography>
                 <Box className="flex items-center gap-80" sx={{ display: { xs: 'none', lg: 'flex' }, gap: { lg: '2rem', xl: '20rem' } }}>
                     <div className='flex gap-5'>
                         {
@@ -80,11 +80,11 @@ const Header = () => {
                         </div>
                         <div className='relative w-10 h-12 flex items-center justify-center'>
                             <h1 className='absolute top-1 right-0 w-6 h-6 rounded-full text-lg bg-[#DB4444] text-white pb-2 flex place-items-center justify-center'>{wisharray.length}</h1>
-                            <a href="/Pro-Ecommerce/wishlist"> <FavoriteBorderIcon sx={{ fontSize: "2rem" }} /></a>
+                            <a href="/wishlist"> <FavoriteBorderIcon sx={{ fontSize: "2rem" }} /></a>
                         </div>
                         <div className='relative w-10 h-12 flex items-center justify-center'>
                             <h1 className='absolute top-1 right-0 w-6 h-6 rounded-full text-lg bg-[#DB4444] text-white pb-2 flex place-items-center justify-center'>{cart.length}</h1>
-                            <a href="/Pro-Ecommerce/cart">  <ShoppingCartIcon sx={{ fontSize: "2rem" }} /></a>
+                            <a href="/cart">  <ShoppingCartIcon sx={{ fontSize: "2rem" }} /></a>
                         </div>
 
                         <div className='relative w-10 h-10 bg-[#DB4444] rounded-full text-center text-white border-none outline-none'>
@@ -121,15 +121,15 @@ const Header = () => {
                     onClose={handleClose}
 
                 >
-                    <a href="/Pro-Ecommerce/contact"><MenuItem onClick={handleClose} sx={{ gap: '10px' }}><EmailIcon /> Contact</MenuItem></a>
-                    <a href="/Pro-Ecommerce"><MenuItem onClick={handleClose} sx={{ gap: '10px' }}><HomeIcon /> Home</MenuItem></a>
-                    <a href="/Pro-Ecommerce/about"><MenuItem onClick={handleClose} sx={{ gap: '10px' }}><ImportContactsIcon /> About</MenuItem></a>
-                    <a href="/Pro-Ecommerce/register"><MenuItem onClick={handleClose} sx={{ gap: '10px' }}><ExitToAppIcon /> Sign UP</MenuItem></a>
-                    <a href="/Pro-Ecommerce/cart">
+                    <a href="/contact"><MenuItem onClick={handleClose} sx={{ gap: '10px' }}><EmailIcon /> Contact</MenuItem></a>
+                    <a href=""><MenuItem onClick={handleClose} sx={{ gap: '10px' }}><HomeIcon /> Home</MenuItem></a>
+                    <a href="/about"><MenuItem onClick={handleClose} sx={{ gap: '10px' }}><ImportContactsIcon /> About</MenuItem></a>
+                    <a href="/register"><MenuItem onClick={handleClose} sx={{ gap: '10px' }}><ExitToAppIcon /> Sign UP</MenuItem></a>
+                    <a href="/cart">
                         <MenuItem onClick={handleClose} sx={{ gap: '10px' }}>
                             <div className='relative w-10 h-12 flex items-center justify-center'>
                                 <h1 className='absolute top-1 right-0 w-6 h-6 rounded-full text-lg bg-[#DB4444] text-white pb-2 flex place-items-center justify-center'>{cart.length}</h1>
-                                <a href="/Pro-Ecommerce/cart">  <ShoppingCartIcon sx={{ fontSize: "2rem" }} /></a>
+                                <a href="/cart">  <ShoppingCartIcon sx={{ fontSize: "2rem" }} /></a>
                             </div>
                             Favourit
                         </MenuItem>
@@ -138,12 +138,12 @@ const Header = () => {
                         <MenuItem onClick={handleClose} sx={{ gap: '10px' }}>
                             <div className='relative w-10 h-12 flex items-center justify-center'>
                                 <h1 className='absolute top-1 right-0 w-6 h-6 rounded-full text-lg bg-[#DB4444] text-white pb-2 flex place-items-center justify-center'>{wisharray.length}</h1>
-                                <a href="/Pro-Ecommerce/wishlist"> <FavoriteBorderIcon sx={{ fontSize: "2rem" }} /></a>
+                                <a href="/wishlist"> <FavoriteBorderIcon sx={{ fontSize: "2rem" }} /></a>
                             </div>
                             Cart
                         </MenuItem>
                     </a>
-                    <a href="/Pro-Ecommerce/contact">  <MenuItem onClick={handleClose} sx={{ gap: '10px' }}><CallOutlinedIcon sx={{ fontSize: "2rem" }} /> Contact </MenuItem></a>
+                    <a href="/contact">  <MenuItem onClick={handleClose} sx={{ gap: '10px' }}><CallOutlinedIcon sx={{ fontSize: "2rem" }} /> Contact </MenuItem></a>
                     <MenuItem onClick={handlePopUp} sx={{ gap: '10px' }}> <SearchIcon className='w-10 h-10' sx={{ fontSize: "2rem" }} />Search</MenuItem>
                 </Menu>
             </Box >

@@ -45,7 +45,7 @@ const BestSelling = ({ products }) => {
                             <CardActionArea>
                                 <div className='absolute top-5 right-5 flex flex-col gap-4 z-30'>
                                     <div className='lg:w-10 lg:h-10 rounded-full bg-white flex items-center justify-center'><button onClick={() => { addToFavourit(product) }}> <FavoriteBorderIcon /></button></div>
-                                    <div className='lg:w-10 lg:h-10 rounded-full bg-white flex items-center justify-center z-50'><button onClick={() => window.location.href = `/Pro-Ecommerce/product/${product.id}`}><VisibilityIcon /></button> </div>
+                                    <div className='lg:w-10 lg:h-10 rounded-full bg-white flex items-center justify-center z-50'><button onClick={() => window.location.href = `/product/${product.id}`}><VisibilityIcon /></button> </div>
                                     <div className='lg:w-10 lg:h-10 rounded-full bg-white flex items-center justify-center z-50'><button onClick={() => { addToCart(product) }}><ShoppingCartCheckoutOutlinedIcon /></button> </div>
                                 </div>
                                 <div className='relative w-full h-44 lg:h-80 flex items-center bg-gray-100'>

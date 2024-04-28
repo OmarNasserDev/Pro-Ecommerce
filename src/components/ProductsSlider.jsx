@@ -62,10 +62,10 @@ const ProductsSlider = (props) => {
                         <Card sx={{ minWidth: { xs: 200, lg: 345 }, height: { xs: 300, lg: 450 }, boxShadow: 'none', position: 'relative' }} key={product.title}>
                             <div className='absolute top-5 right-5 flex flex-col gap-4 z-30'>
                                 <div className='lg:w-10 lg:h-10 rounded-full bg-white flex items-center justify-center z-50'><button onClick={() => addToFavourit(product)}> <FavoriteBorderIcon /></button></div>
-                                <div className='lg:w-10 lg:h-10 rounded-full bg-white flex items-center justify-center z-50'><button onClick={() => window.location.href = `/Pro-Ecommerce/product/${product.id}`}><VisibilityIcon /></button> </div>
+                                <div className='lg:w-10 lg:h-10 rounded-full bg-white flex items-center justify-center z-50'><button onClick={() => window.location.href = `/product/${product.id}`}><VisibilityIcon /></button> </div>
                                 <div className='lg:w-10 lg:h-10 rounded-full bg-white flex items-center justify-center z-50'><button onClick={() => { addToCart(product) }}><ShoppingCartCheckoutOutlinedIcon /></button> </div>
                             </div>
-                            <CardActionArea href={'/Pro-Ecommerce/product/' + product.id}>
+                            <CardActionArea href={'/product/' + product.id}>
                                 <div className='relative w-full h-44 lg:h-80 flex items-center bg-gray-100'>
                                     {product.rating.rate >= 3 ?
                                         <h1 className='absolute top-2 left-2 lg:top-5 lg:left-5 bg-[#DB4444]  w-14 h-7 lg:w-20 lg:h-8 lg:text-lg  text-white font-sans text-center rounded-md '>-45%</h1>

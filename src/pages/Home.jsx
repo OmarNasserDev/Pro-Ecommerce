@@ -1,6 +1,6 @@
 import React, { useEffect, memo, useCallback } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import { getAllCategories, getAllProducts } from '../Api-redux-toolkit/actions'
+import { getAllCategories, getAllProducts, getAllOurProducts } from '../Api-redux-toolkit/actions'
 //CountDown Component
 import Countdown from 'react-countdown'
 //Mui
@@ -29,8 +29,10 @@ import Footer from '../components/Footer';
 const Home = () => {
 
     const dispatch = useDispatch()
+
     const categoriesData = useSelector(state => state.category.data)
     const productsData = useSelector(state => state.products.data)
+    const ourProducts = useSelector(state => state.ourProducts.data)
     const Completionist = () => <span className='text-2xl font-extrabold uppercase text-[#DB4444] bg-slate-900 rounded-xl p-5'>Expired Offer</span>
 
     const date = useCallback(({ days, hours, minutes, seconds, completed }) => {
@@ -67,6 +69,7 @@ const Home = () => {
     useEffect(() => {
         dispatch(getAllCategories())
         dispatch(getAllProducts())
+        dispatch(getAllOurProducts())
 
     }, [dispatch])
 
@@ -147,7 +150,7 @@ const Home = () => {
                     <div className='flex text-2xl lg:text-5xl gap-20 lg:gap-32 mb-20 '>
                         <h1 className='font-sans capitalize'>Explore our products</h1>
                     </div>
-                    <OurProductsSlider />
+                    <OurProductsSlider products={ourProducts} />
                 </div>
                 <div className='w-full flex items-center justify-center pr-5'>
                     <button className='w-28 h-10 lg:w-64 lg:h-16 lg:text-xl mt-5 rounded-md bg-[#DB4444] text-white'>View All</button>

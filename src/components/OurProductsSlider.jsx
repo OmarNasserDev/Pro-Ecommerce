@@ -1,6 +1,5 @@
 import React, { useEffect, useContext } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import { getAllOurProducts } from '../Api-redux-toolkit/actions'
+
 
 //MUI
 import Card from '@mui/material/Card';
@@ -18,10 +17,9 @@ import VisibilityIcon from '@mui/icons-material/Visibility';
 //Context WishList
 import { WishList } from '../App';
 
-const OurProductsSlider = () => {
+const OurProductsSlider = ({products}) => {
 
-    const dispatch = useDispatch()
-    const ourProducts = useSelector(state => state.ourProducts.data)
+
     const { wisharray, setWisharray } = useContext(WishList)
     const addToFavourit = (product) => {
         const test = wisharray.filter(item => item.id === product.id)
@@ -34,16 +32,14 @@ const OurProductsSlider = () => {
         document.querySelector('.type-error').innerHTML = status
     }
     //I will dispatch this data from products page *****remmeber*****
-    useEffect(() => {
-        dispatch(getAllOurProducts())
-    }, [])
+
 
     return (
         <>
             <h1 className='type-error w-96 text-2xl text-center text-blue-600 bg-gray-300 font-sans'></h1>
             <div className='min-w-full min-h-[104vh] py-3 lg:h-[95vh] mb-12 grid grid-cols-2 lg:grid-cols-4 gap-5  pr-5'>
                 {
-                    ourProducts.map(product =>
+                    products.map(product =>
 
                         <Card sx={{ minWidth: { xs: 200, lg: 345 }, height: { xs: 300, lg: 470 }, boxShadow: 'none', position: 'relative' }} key={product.title} className='mx-5 ' onClick={handle}>
                             <div className='absolute top-5 right-5 flex flex-col gap-4 z-30'>
